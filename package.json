@@ -1,0 +1,33 @@
+{
+  "name": "lotto-backend",
+  "version": "1.0.0",
+  "description": "Cosmos Lottery Programming Challenge Backend.",
+  "main": "dist/app.js",
+  "scripts": {
+    "prebuild": "tsconfig.json --fix",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristipele7/Lotto-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristipele7/Lotto-backend/issues"
+  },
+  "homepage": "https://github.com/cristipele7/Lotto-backend#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.17"
+  },
+  "dependencies": {
+    "@types/mysql": "^2.15.25",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
+}
