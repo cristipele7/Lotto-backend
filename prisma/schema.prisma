@@ -14,22 +14,15 @@ datasource db {
 }
 
 model Box {
-  id        Int          @id @default(autoincrement())
-  superzahl Int
-  tickets   Box_Ticket[]
+  id      Int  @id @default(autoincrement())
+  numbers Json
+
+  ticket   Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  ticketId Int
 }
 
 model Ticket {
-  id      Int          @id @default(autoincrement())
-  numbers Json
-  boxes   Box_Ticket[]
-}
-
-model Box_Ticket {
-  box      Box    @relation(fields: [boxId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  boxId    Int
-  ticket   Ticket @relation(fields: [ticketId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  ticketId Int
-
-  @@id([ticketId, boxId])
+  id        Int   @id @default(autoincrement())
+  superzahl Int?
+  boxes     Box[]
 }

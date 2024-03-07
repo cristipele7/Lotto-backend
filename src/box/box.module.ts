@@ -7,5 +7,6 @@ import { PrismaModule } from 'src/prisma/prisma.module';
   imports: [PrismaModule],
   controllers: [BoxController],
   providers: [BoxService],
+  exports: [BoxService],
 })
 export class BoxModule {}

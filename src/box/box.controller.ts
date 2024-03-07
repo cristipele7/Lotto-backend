@@ -1,12 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
-import { BoxService } from './box.service';
+import { Controller } from '@nestjs/common';
 
 @Controller('box')
-export class BoxController {
-  constructor(private readonly boxService: BoxService) {}
-
-  @Get('')
-  async getBoxes() {
-    return this.boxService.getBoxes();
-  }
-}
+export class BoxController {}
