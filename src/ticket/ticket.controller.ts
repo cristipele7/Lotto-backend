@@ -58,7 +58,11 @@ export class TicketController {
 
   @Get('/')
   async getTickets() {
-    return this.ticketService.getMany();
+    return this.ticketService.getMany({
+      include: {
+        boxes: true,
+      },
+    });
   }
 
   @Get('/:id')
